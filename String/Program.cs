@@ -111,7 +111,7 @@ namespace String
             Console.WriteLine(result8);*/
 
             // Тема 9 Задание 5
-            Console.WriteLine("Введите текст");
+            /*Console.WriteLine("Введите текст");
             string text = Console.ReadLine();
 
             char[] splitter = new char[] { ' ', '.', ',' };
@@ -133,7 +133,7 @@ namespace String
                     max = substrings[i].Length;
                     maxWord = substrings[i];
                 }
-            }
+            }*/
             /* то же самое с помощью foreach
             foreach (string substring in substrings)
             {
@@ -148,7 +148,29 @@ namespace String
                     maxWord = substring;
                 }
             }*/
-            Console.WriteLine($"{min} {minWord} {max} {maxWord}");
+            //Console.WriteLine($"{min} {minWord} {max} {maxWord}");
+
+
+            // Задание 10
+            Console.WriteLine("Введите текст");
+            string text = Console.ReadLine();
+
+            for (int i = text.Length - 1; i >= 0; i--)
+            {
+                if (text[i] == ' ' || text[i] == '.' ||
+                    text[i] == ',')
+                {
+                    int k = 0;
+                    for (int j = i + 1; j < text.Length; j++)
+                    {
+                        if (text[j] == 'k')
+                            k++;
+                    }
+                    Console.WriteLine(k);
+                    return;
+                }
+            }
+            Console.WriteLine("В последнем слове нет букв k");
 
         }
     }
