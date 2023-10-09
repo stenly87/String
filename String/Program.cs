@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Data.SqlTypes;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -98,7 +99,7 @@ namespace String
             anotherString = sb.ToString(); // получение результата
             Console.WriteLine(anotherString);*/
 
-            // 8 задание может выглядеть так:
+            //Тема 9 8 задание может выглядеть так:
             /*string start = Console.ReadLine();
             sb.Clear();// очистка билдера
             for (int i = 0; i < start.Length; i++)
@@ -109,6 +110,45 @@ namespace String
             string result8 = sb.ToString();
             Console.WriteLine(result8);*/
 
+            // Тема 9 Задание 5
+            Console.WriteLine("Введите текст");
+            string text = Console.ReadLine();
+
+            char[] splitter = new char[] { ' ', '.', ',' };
+
+            string[] substrings = text.Split(splitter, 
+                StringSplitOptions.RemoveEmptyEntries);
+            int min = int.MaxValue;
+            int max = int.MinValue;
+            string minWord = "", maxWord = null;
+            for (int i = 0; i < substrings.Length; i++)
+            {
+                if (min > substrings[i].Length)
+                {
+                    min = substrings[i].Length;
+                    minWord = substrings[i];
+                }
+                if (max < substrings[i].Length)
+                {
+                    max = substrings[i].Length;
+                    maxWord = substrings[i];
+                }
+            }
+            /* то же самое с помощью foreach
+            foreach (string substring in substrings)
+            {
+                if (min > substring.Length)
+                {
+                    min = substring.Length;
+                    minWord = substring;
+                }
+                if (max < substring.Length)
+                {
+                    max = substring.Length;
+                    maxWord = substring;
+                }
+            }*/
+            Console.WriteLine($"{min} {minWord} {max} {maxWord}");
 
         }
     }
