@@ -152,12 +152,13 @@ namespace String
 
 
             // Задание 10
-            Console.WriteLine("Введите текст");
+            /*Console.WriteLine("Введите текст");
             string text = Console.ReadLine();
 
             for (int i = text.Length - 1; i >= 0; i--)
             {
-                if (text[i] == ' ' || text[i] == '.' ||
+                if (text[i] == ' ' || 
+                    text[i] == '.' ||
                     text[i] == ',')
                 {
                     int k = 0;
@@ -171,8 +172,21 @@ namespace String
                 }
             }
             Console.WriteLine("В последнем слове нет букв k");
+            */
 
+            // Задание 16 с помощью лямбда-выражений
+            Console.WriteLine("Введите текст");
+
+            char[] splitter = new char[] { ' ', '.', ',' };
+
+            Console.ReadLine().
+                Split(splitter,
+                StringSplitOptions.RemoveEmptyEntries).
+                Where(s => s.Contains('k')).
+                ToList().
+                ForEach(s => Console.WriteLine(s));
         }
+
     }
     
 }
