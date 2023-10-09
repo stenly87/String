@@ -10,7 +10,7 @@ namespace String
         {
             // строки в c#
             // ссылочный тип данных
-            string str  = "привет";
+            /*string str  = "привет";
             string str1 = str;
             string str2 = "привет";
             // строки являются неизменяемыми объектами
@@ -96,10 +96,10 @@ namespace String
                 Append('e');
             sb.Replace("при", "вет");
             anotherString = sb.ToString(); // получение результата
-            Console.WriteLine(anotherString);
+            Console.WriteLine(anotherString);*/
 
             // 8 задание может выглядеть так:
-            string start = Console.ReadLine();
+            /*string start = Console.ReadLine();
             sb.Clear();// очистка билдера
             for (int i = 0; i < start.Length; i++)
             { 
@@ -107,7 +107,9 @@ namespace String
                     sb.Append(start[i]).Append(start[i]);
             }
             string result8 = sb.ToString();
-            Console.WriteLine(result8);
+            Console.WriteLine(result8);*/
+
+
         }
     }
     
